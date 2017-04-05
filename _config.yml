@@ -70,5 +70,5 @@ theme: tranquilpeak
 deploy:
   type: git
   message:
-  repo:
-    github: https://github.com/auxcoder/auxcoder.github.io.git, source
+  repo: https://github.com/auxcoder/auxcoder.github.io.git
+  branch: master
