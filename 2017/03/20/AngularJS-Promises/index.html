@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="English">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="AuxCoder">
+    <title>AngularJS Promises - AuxCoder</title>
+    <meta name="author" content="Auxcoder">
+    
+    
+    
+    <meta name="description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="AngularJS Promises">
+<meta property="og:url" content="http://auxcoder.github.io/2017/03/20/AngularJS-Promises/index.html">
+<meta property="og:site_name" content="AuxCoder">
+<meta property="og:description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
+<meta property="og:updated_time" content="2017-04-05T20:04:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS Promises">
+<meta name="twitter:description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/75c1929d1099ee89b9430e7066cb261d?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-5l6sqicqofwjdicub7deaocu66ndgd1chvvstv0gayg4jnequannuhzafkev.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">AuxCoder</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/75c1929d1099ee89b9430e7066cb261d?s=90"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/75c1929d1099ee89b9430e7066cb261d?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Auxcoder</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            AngularJS Promises
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Mon Mar 20 2017 10:36:21 GMT-0400">
+	
+		    Mar 20, 2017
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Coding/">Coding</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="AngularJS-use-the-q-library-qProvider-to-build-promises"><a href="#AngularJS-use-the-q-library-qProvider-to-build-promises" class="headerlink" title="AngularJS use the $q library, qProvider to build promises."></a>AngularJS use the <code>$q</code> library, <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">qProvider</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
+<p>A promise is always in either one of three states:</p>
+<ul>
+<li><em>Pending</em> - the result hasn’t been computed yet</li>
+<li><em>Fulfilled</em> - the result was computed successfully</li>
+<li><em>Rejected</em> - a failure occurred during computation</li>
+</ul>
+<p>The first call <code>deferred.resolve(...)</code> puts the promise into the fulfilled state. As result a success callback will be invoked. The second call <code>deferred.reject(...)</code> puts the promise into the rejected state. As result an error callback will be invoked. It is also possible to invoke <code>deferred.notify(...)</code> to track chaining.</p>
+<p>We can use promises directly in controllers to chain call that depends one in other.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params">myParams</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> deferred = $q.defer();</div><div class="line">	deferred.notify(&#123;<span class="attr">action</span>: <span class="string">'get-items'</span> , <span class="attr">message</span>: <span class="string">'Getting items ...'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// update/notify should be called after returning ther deferred object</span></div><div class="line">	$timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		deferred.notify(<span class="string">'getItems was called'</span>);</div><div class="line">	&#125;, <span class="number">0</span>);</div><div class="line"></div><div class="line">	<span class="comment">// MyService.getItems() / Service.method()</span></div><div class="line">	MyService.getItems(myParams).then(</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.resolve(response);</div><div class="line">		&#125;,</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.reject(response);</div><div class="line">		&#125;</div><div class="line">	);</div><div class="line">	<span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>We can write the similar functionality in shorter way returning the <code>$q</code> object.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params">myParams</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> $q(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">		MyService.getItems(resolve, reject);</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>We can use the promise chain <code>.then()</code> to wait untill promise resolve then do something with the data.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">myAsyncFunction(&#123;<span class="attr">param</span>: <span class="string">'some data'</span>&#125;)</div><div class="line">.then(</div><div class="line">	<span class="comment">// on success</span></div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(response);</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">// on error</span></div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(response);</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">// on notify</span></div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(response); <span class="comment">// 'getItems was called'</span></div><div class="line">	&#125;,</div><div class="line">)</div><div class="line">.finally(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(response);</div><div class="line">	&#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>finally</code> will called no matter if the promise was resolved or rejected</p>
+</blockquote>
+<h2 id="Chain-promises-with-AngularJS"><a href="#Chain-promises-with-AngularJS" class="headerlink" title="Chain promises with AngularJS"></a>Chain promises with AngularJS</h2><p>Let say that we have three service method and the second depend on first and third in second, resulting in a chain like: <code>first() -&gt; second(firstResponse) -&gt; third(secondResponse)</code>.</p>
+<p>Let say the we have a service like this.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>, []).factory(<span class="string">'myService'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$q</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="attr">first</span>: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</div><div class="line">			<span class="keyword">return</span> $q(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">				$http.get(<span class="string">'http://myendpoint.com/segment'</span>, &#123;<span class="attr">params</span>: params&#125;).then(resolve, reject);</div><div class="line">			&#125;);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">second</span>: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</div><div class="line">			<span class="keyword">return</span> $q(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">				$http.get(<span class="string">'http://myendpoint.com/segment'</span>, &#123;<span class="attr">params</span>: params&#125;).then(resolve, reject);</div><div class="line">			&#125;);</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">third</span>: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</div><div class="line">			<span class="keyword">return</span> $q(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">				$http.get(<span class="string">'http://myendpoint.com/segment'</span>, &#123;<span class="attr">params</span>: params&#125;).then(resolve, reject);</div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>And in our controller we call the one of the available methods in the service and <code>then</code> call another and so on.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">firstResult</span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> myService.second(&#123;<span class="attr">param</span>: firstResult.someAttr&#125;);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">secondResult</span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> myService.third(&#123;<span class="attr">param</span>: secondResult.someAttr&#125;);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">thirdResult</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(thirdResult);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
+<p>It turns out that we can easily extend the promise continuing the chain by tacking on a second then. Down the chain, each then invocation returns a new derived promise that becomes part of the chain. <em>Each derived promise is resolved with the return value of each then function</em>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">firstResult</span>)</span>&#123;</div><div class="line">			<span class="comment">// the returned object is available in the next .then()</span></div><div class="line">			<span class="keyword">return</span> firstResult.lenght;</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.then(<span class="function"><span class="keyword">function</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(count);</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<p>The promise resolve value/object is available as input to the next then method. This is true even if the then method doesn’t explicitly return something. In that case the</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">firstResult</span>)</span>&#123;</div><div class="line">			<span class="comment">// the returned object is available in the next .then()</span></div><div class="line">			<span class="built_in">console</span>.log(firstResult.lenght);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.then(<span class="function"><span class="keyword">function</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(count); <span class="comment">// undefined as nothing was explicity returned from the previous promise</span></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Handling-errors"><a href="#Handling-errors" class="headerlink" title="Handling errors"></a>Handling errors</h2><p>Error handling can be added through catch methods. You can either add a granular catch handler to deal with specific promises or you can add a single catch all at the end. The main difference is that specific error handlers will handle the error and let subsequent then handlers carry on as if nothing happened.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleError</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(response)</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleError</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(response)</div><div class="line">&#125;</div><div class="line"></div><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">firstResult</span>)</span>&#123;</div><div class="line">			<span class="comment">// the returned object is available in the next .then()</span></div><div class="line">			<span class="built_in">console</span>.log(firstResult.lenght);</div><div class="line">		&#125;,</div><div class="line">		handleError,</div><div class="line">		handleUpdate</div><div class="line">	)</div><div class="line">	.then(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(count); <span class="comment">// undefined as nothing was explicity returned from the previous promise</span></div><div class="line">		&#125;,</div><div class="line">		handleError,</div><div class="line">		handleUpdate</div><div class="line">	);</div></pre></td></tr></table></figure>
+<p>The catch function may seem like a different beast, but it’s really just a then method. <code>catch(errorCallback)</code> is shorthand for <code>promise.then(null, errorCallback)</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(response);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.catch(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(e);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
+<p>We have a <code>finally(callback, notifyCallback)</code> method that allows you to observe either the fulfillment or rejection of a promise.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(response);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.catch(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(e);</div><div class="line">		&#125;</div><div class="line">	).finally(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'promise ends with success or error'</span>);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
+<h2 id="q-all"><a href="#q-all" class="headerlink" title="$q.all()"></a><code>$q.all()</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line">	<span class="keyword">var</span> houses = MyService.getHouses();</div><div class="line">	<span class="keyword">var</span> cars = MyService.getCars();</div><div class="line"></div><div class="line">	$q.all([houses, cars]).then(</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.resolve(response);</div><div class="line">		&#125;,</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.reject(response);</div><div class="line">		&#125;</div><div class="line">	);</div><div class="line">	<span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>Sources</em></p>
+<ul>
+<li><a href="https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/" target="_blank" rel="external">Promises in AngularJS. Part II. $q service</a></li>
+<li><a href="http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained" target="_blank" rel="external">Angular promise chaining explained</a></li>
+<li><a href="http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/" target="_blank" rel="external">AngularJS Promises - The Definitive Guide</a></li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/q/">$q</a> <a class="tag tag--primary tag--small t-link" href="/tags/AngularSJS/">AngularSJS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Promises/">Promises</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/05/hello-world/"  data-tooltip="Hello World">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/08/10/mac-finder-preferences/" data-tooltip="Mac Finder preferences">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Auxcoder. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/05/hello-world/"  data-tooltip="Hello World">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/08/10/mac-finder-preferences/" data-tooltip="Mac Finder preferences">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/75c1929d1099ee89b9430e7066cb261d?s=110"/>
+        
+            <h4 id="about-card-name">Auxcoder</h4>
+        
+            <h5 id="about-card-bio"><p>author.bio</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Front End Developer</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Miami
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-cuxkmslfbyhvwpurchjv2wqytnjwyklxowhlyjiqkdtskoxvfdgazuczorpm.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+</html>
