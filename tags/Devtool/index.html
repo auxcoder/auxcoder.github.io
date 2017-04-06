@@ -212,18 +212,14 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit, faff process.</p>
+                    <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit process.</p>
 <p>Sometimes I forget to set a breakpoint when my XHR requests come back so I can copy the response. But it’s to fix.</p>
 <p>Right click on the XHR request in the network panel, and select “Copy response”. Boom. I’ve now captured the JSON response and I’m good.</p>
-<p><img src="/images/devtools-copy-response.jpg" alt="devtools copy response"></p>
-<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon for me to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
+<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
 <p><strong>This is where <code>$_</code> is a live saver, which contains the result of the last command run in the console.</strong></p>
 <p>In the example below, I’ve forgotten to capture the result of the promise so I can manipulate (or in this case, <code>copy</code>) the result. This is simply fixed by running a new command with <code>$_.then(...)</code>.</p>
-<p><img src="/images/devtools-dollar-underscore.png" alt="devtools dollar underscore"></p>
 <h2 id="Copy-any-dead-logged-value"><a href="#Copy-any-dead-logged-value" class="headerlink" title="Copy any dead logged value"></a>Copy any <em>dead</em> logged value</h2><p>Sometimes I’ll <code>console.log</code> out a value or object that I want to inspect. Then realise that actually I want to copy it. Old me would go back to the source code, and log out a <code>JSON.stringify</code>, but not new me.</p>
-<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON for me:</p>
-<p><img src="/images/devtools-capture-for-copy.png" alt="devtools copy a global"></p>
-<p>What’s a trick, neat or otherwise, that you use on a regular basis?</p>
+<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON.</p>
 
                     
                         

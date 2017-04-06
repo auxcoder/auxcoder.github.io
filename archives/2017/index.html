@@ -189,56 +189,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/04/05/hello-world/">
-                            Hello World
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Apr 05 2017 16:51:57 GMT-0400">
-	
-		    Apr 05, 2017
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2017/04/05/hello-world/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/03/20/AngularJS-Promises/">
+                        <a class="link-unstyled" href="/2017/03/20/angularjs-promises/">
                             AngularJS Promises
                         </a>
                     
@@ -261,7 +212,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="AngularJS-use-the-q-library-qProvider-to-build-promises"><a href="#AngularJS-use-the-q-library-qProvider-to-build-promises" class="headerlink" title="AngularJS use the $q library, qProvider to build promises."></a>AngularJS use the <code>$q</code> library, <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">qProvider</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
+                    <h2 id="AngularJS-use-the-q-library-a-service-to-build-promises"><a href="#AngularJS-use-the-q-library-a-service-to-build-promises" class="headerlink" title="AngularJS use the $q library,a service to build promises."></a>AngularJS use the <code>$q</code> library,a <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">service</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
 <p>A promise is always in either one of three states:</p>
 <ul>
 <li><em>Pending</em> - the result hasn’t been computed yet</li>
@@ -294,19 +245,19 @@
 <p>We have a <code>finally(callback, notifyCallback)</code> method that allows you to observe either the fulfillment or rejection of a promise.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(response);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.catch(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(e);</div><div class="line">		&#125;</div><div class="line">	).finally(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'promise ends with success or error'</span>);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
 <h2 id="q-all"><a href="#q-all" class="headerlink" title="$q.all()"></a><code>$q.all()</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line">	<span class="keyword">var</span> houses = MyService.getHouses();</div><div class="line">	<span class="keyword">var</span> cars = MyService.getCars();</div><div class="line"></div><div class="line">	$q.all([houses, cars]).then(</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.resolve(response);</div><div class="line">		&#125;,</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.reject(response);</div><div class="line">		&#125;</div><div class="line">	);</div><div class="line">	<span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><em>Sources</em></p>
-<ul>
-<li><a href="https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/" target="_blank" rel="external">Promises in AngularJS. Part II. $q service</a></li>
-<li><a href="http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained" target="_blank" rel="external">Angular promise chaining explained</a></li>
-<li><a href="http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/" target="_blank" rel="external">AngularJS Promises - The Definitive Guide</a></li>
-</ul>
+<!---
+*References*
++ [Promises in AngularJS. Part II. $q service](https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/)
++ [Angular promise chaining explained](http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained)
++ [AngularJS Promises - The Definitive Guide](http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/)
+--->
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/03/20/AngularJS-Promises/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2017/03/20/angularjs-promises/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>
