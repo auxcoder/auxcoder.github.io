@@ -8,7 +8,8 @@ subtitle: Some code to not forget
 description:
 author: Auxcoder
 language: English
-timezone:
+timezone: America/New_York
+avatar: https://s.gravatar.com/avatar/75c1929d1099ee89b9430e7066cb261d?s=80&r=g
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -26,6 +27,14 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
+# hexo-generator
+# per_page: 0 means no limit
+archive_generator:
+  per_page: 0
+  yearly: false
+  monthly: false
+  daily: false
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
@@ -63,7 +72,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: tranquilpeak
+# tranquilpeak
+theme: anatole
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
