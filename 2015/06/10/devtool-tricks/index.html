@@ -17,14 +17,10 @@
 <meta property="og:url" content="http://auxcoder.github.io/2015/06/10/devtool-tricks/index.html">
 <meta property="og:site_name" content="AuxCoder">
 <meta property="og:description" content="Two tricks for when I “forget”.Capturing XHR resultsOne of my favourite commands in devtools is the copy function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tri">
-<meta property="og:image" content="http://auxcoder.github.io/images/devtools-copy-response.jpg">
-<meta property="og:image" content="http://auxcoder.github.io/images/devtools-dollar-underscore.png">
-<meta property="og:image" content="http://auxcoder.github.io/images/devtools-capture-for-copy.png">
-<meta property="og:updated_time" content="2016-04-10T21:36:45.000Z">
+<meta property="og:updated_time" content="2017-04-06T13:54:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Devtool tricks">
 <meta name="twitter:description" content="Two tricks for when I “forget”.Capturing XHR resultsOne of my favourite commands in devtools is the copy function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tri">
-<meta name="twitter:image" content="http://auxcoder.github.io/images/devtools-copy-response.jpg">
     
     
         
@@ -93,7 +89,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -129,7 +125,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -141,7 +137,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -153,7 +149,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -199,11 +195,11 @@
     <div class="post-meta">
     <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
 	
-		    Jun 10, 2015
+		    10 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -214,18 +210,14 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit, faff process.</p>
+            <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit process.</p>
 <p>Sometimes I forget to set a breakpoint when my XHR requests come back so I can copy the response. But it’s to fix.</p>
 <p>Right click on the XHR request in the network panel, and select “Copy response”. Boom. I’ve now captured the JSON response and I’m good.</p>
-<p><img src="/images/devtools-copy-response.jpg" alt="devtools copy response"></p>
-<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon for me to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
+<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
 <p><strong>This is where <code>$_</code> is a live saver, which contains the result of the last command run in the console.</strong></p>
 <p>In the example below, I’ve forgotten to capture the result of the promise so I can manipulate (or in this case, <code>copy</code>) the result. This is simply fixed by running a new command with <code>$_.then(...)</code>.</p>
-<p><img src="/images/devtools-dollar-underscore.png" alt="devtools dollar underscore"></p>
 <h2 id="Copy-any-dead-logged-value"><a href="#Copy-any-dead-logged-value" class="headerlink" title="Copy any dead logged value"></a>Copy any <em>dead</em> logged value</h2><p>Sometimes I’ll <code>console.log</code> out a value or object that I want to inspect. Then realise that actually I want to copy it. Old me would go back to the source code, and log out a <code>JSON.stringify</code>, but not new me.</p>
-<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON for me:</p>
-<p><img src="/images/devtools-capture-for-copy.png" alt="devtools copy a global"></p>
-<p>What’s a trick, neat or otherwise, that you use on a regular basis?</p>
+<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON.</p>
 
             
         </div>
@@ -233,7 +225,7 @@
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small">TAGGÉ DANS</span><br/>
                 
     <a class="tag tag--primary tag--small t-link" href="/tags/Devtool/">Devtool</a>
 
@@ -244,17 +236,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/15/ssh/"  data-tooltip="SSH tips">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/curl/"  data-tooltip="Curl as utilitie set of tools">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/curl/" data-tooltip="Curl as utilitie set of tools">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/html5/" data-tooltip="HTML5">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -313,17 +305,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/15/ssh/"  data-tooltip="SSH tips">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/curl/"  data-tooltip="Curl as utilitie set of tools">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/curl/" data-tooltip="Curl as utilitie set of tools">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/html5/" data-tooltip="HTML5">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -367,17 +359,17 @@
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2015/06/10/devtool-tricks/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+                <i class="fa fa-google-plus"></i><span class="">Partager sur Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2015/06/10/devtool-tricks/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2015/06/10/devtool-tricks/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
             </a>
         </li>
     </ul>
@@ -407,7 +399,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         

@@ -21,7 +21,7 @@ Some time the target site has you banned access based on your browser’s signat
 <meta property="og:description" content="Get web page content1curl -O [filenameURL]
 Some time the target site has you banned access based on your browser’s signature based in your --user-agent
 12curl -O [filenameURL]curl --header &quot;X-MyHeader">
-<meta property="og:updated_time" content="2016-04-10T21:36:26.000Z">
+<meta property="og:updated_time" content="2017-04-06T13:54:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Curl as utilitie set of tools">
 <meta name="twitter:description" content="Get web page content1curl -O [filenameURL]
@@ -95,7 +95,7 @@ Some time the target site has you banned access based on your browser’s signat
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -131,7 +131,7 @@ Some time the target site has you banned access based on your browser’s signat
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -143,7 +143,7 @@ Some time the target site has you banned access based on your browser’s signat
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -155,7 +155,7 @@ Some time the target site has you banned access based on your browser’s signat
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -201,11 +201,11 @@ Some time the target site has you banned access based on your browser’s signat
     <div class="post-meta">
     <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
 	
-		    Jun 10, 2015
+		    10 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -219,8 +219,7 @@ Some time the target site has you banned access based on your browser’s signat
             <h3 id="Get-web-page-content"><a href="#Get-web-page-content" class="headerlink" title="Get web page content"></a>Get web page content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div></pre></td></tr></table></figure>
 <p>Some time the target site has you <em>banned access based on your browser’s signature</em> based in your <code>--user-agent</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div><div class="line">curl --header <span class="string">"X-MyHeader: 1"</span> www.bropages.org</div></pre></td></tr></table></figure>
-<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
 <h4 id="Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser"><a href="#Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser" class="headerlink" title="Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser"></a>Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser</h4><p>The basic syntax is as follows:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"UserAgentString"</span> http://url.com</div></pre></td></tr></table></figure>
 <p>One of the most common situations of different source HTML and CSS are for websites with stripped down mobile versions, you could retrieve iPhone-specific source code with:</p>
@@ -229,12 +228,9 @@ Some time the target site has you banned access based on your browser’s signat
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> http://microsoft.com</div></pre></td></tr></table></figure>
 <p>Save file</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> -O https://remysharp.com/2015/06/09/devtool-tricks-for-when-i-forget</div></pre></td></tr></table></figure>
-<h3 id="POST"><a href="#POST" class="headerlink" title="POST:"></a>POST:</h3><p>For posting data:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>For file upload:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>RESTful HTTP Post:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p><em>For posting data</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>For file upload</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>RESTful HTTP Post</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure></p>
 
             
         </div>
@@ -242,9 +238,9 @@ Some time the target site has you banned access based on your browser’s signat
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small">TAGGÉ DANS</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Curl/">Curl</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/curl/">curl</a>
 
             </div>
         
@@ -253,17 +249,17 @@ Some time the target site has you banned access based on your browser’s signat
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/devtool-tricks/"  data-tooltip="Devtool tricks">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/16/html5-multimedia/"  data-tooltip="HTML5 Multimedia">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/html5/" data-tooltip="HTML5">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/devtool-tricks/" data-tooltip="Devtool tricks">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -322,17 +318,17 @@ Some time the target site has you banned access based on your browser’s signat
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/devtool-tricks/"  data-tooltip="Devtool tricks">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/16/html5-multimedia/"  data-tooltip="HTML5 Multimedia">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/html5/" data-tooltip="HTML5">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/10/devtool-tricks/" data-tooltip="Devtool tricks">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -376,17 +372,17 @@ Some time the target site has you banned access based on your browser’s signat
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2015/06/10/curl/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+                <i class="fa fa-google-plus"></i><span class="">Partager sur Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2015/06/10/curl/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2015/06/10/curl/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
             </a>
         </li>
     </ul>
@@ -416,7 +412,7 @@ Some time the target site has you banned access based on your browser’s signat
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         

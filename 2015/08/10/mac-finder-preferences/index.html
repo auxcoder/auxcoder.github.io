@@ -31,7 +31,7 @@ Column View: clmv
 Icon View: icnv
 
 1defaults write com.apple.Finder FXPr">
-<meta property="og:updated_time" content="2016-04-10T21:37:00.000Z">
+<meta property="og:updated_time" content="2017-04-06T13:54:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Finder preferences">
 <meta name="twitter:description" content="Set prefered LayoutThere are four different layouts that you can choose in the Finder.
@@ -110,7 +110,7 @@ Icon View: icnv
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -146,7 +146,7 @@ Icon View: icnv
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -158,7 +158,7 @@ Icon View: icnv
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -170,7 +170,7 @@ Icon View: icnv
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -216,11 +216,11 @@ Icon View: icnv
     <div class="post-meta">
     <time itemprop="datePublished" content="Mon Aug 10 2015 10:58:48 GMT-0400">
 	
-		    Aug 10, 2015
+		    10 Aug 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Misc/">Misc</a>
 
@@ -248,10 +248,10 @@ Icon View: icnv
 <h3 id="Sort-Folders-before-files-hack-Windows-style"><a href="#Sort-Folders-before-files-hack-Windows-style" class="headerlink" title="Sort Folders before files hack (Windows style)"></a>Sort Folders before files hack (Windows style)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FILE=/System/Library/CoreServices/Finder.app/Contents/Resources/English.lproj/InfoPlist.strings</div></pre></td></tr></table></figure>
 <h3 id="Backup-InfoPlist-strings-first-if-no-backup-exists"><a href="#Backup-InfoPlist-strings-first-if-no-backup-exists" class="headerlink" title="Backup InfoPlist.strings first if no backup exists"></a>Backup InfoPlist.strings first if no backup exists</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ <span class="_">-f</span> <span class="variable">$FILE</span>.bak ] || sudo ditto <span class="variable">$FILE</span> <span class="variable">$FILE</span>.bak</div></pre></td></tr></table></figure>
 <h3 id="Convert-InfoPlist-strings-to-XML"><a href="#Convert-InfoPlist-strings-to-XML" class="headerlink" title="Convert InfoPlist.strings to XML"></a>Convert InfoPlist.strings to XML</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo plutil -convert xml1 <span class="variable">$FILE</span></div></pre></td></tr></table></figure>
-<h1 id="Add-a-space-in-front-of-‘Folder’-string"><a href="#Add-a-space-in-front-of-‘Folder’-string" class="headerlink" title="Add a space in front of ‘Folder’ string"></a>Add a space in front of ‘Folder’ string</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo sed -i <span class="string">''</span> <span class="string">'s/g\&gt;Folder/g\&gt; Folder/'</span> <span class="variable">$FILE</span> &gt; /dev/null</div></pre></td></tr></table></figure>
-<h1 id="Convert-InfoPlist-strings-back-to-binary"><a href="#Convert-InfoPlist-strings-back-to-binary" class="headerlink" title="Convert InfoPlist.strings back to binary"></a>Convert InfoPlist.strings back to binary</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo plutil -convert binary1 <span class="variable">$FILE</span></div></pre></td></tr></table></figure>
-<h1 id="Remove-all-DS-Store-files-to-reset-folder-specific-view-options"><a href="#Remove-all-DS-Store-files-to-reset-folder-specific-view-options" class="headerlink" title="Remove all .DS_Store files to reset folder specific view options"></a>Remove all .DS_Store files to reset folder specific view options</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo find / -name <span class="string">".DS_Store"</span> -depth -exec rm <span class="_">-f</span> &#123;&#125; \;</div></pre></td></tr></table></figure>
-<h1 id="Restart-cfprefsd-and-Finder"><a href="#Restart-cfprefsd-and-Finder" class="headerlink" title="Restart cfprefsd and Finder"></a>Restart cfprefsd and Finder</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">kill</span>All cfprefsd</div><div class="line"><span class="built_in">kill</span>All Finder</div></pre></td></tr></table></figure>
+<h2 id="Add-a-space-in-front-of-‘Folder’-string"><a href="#Add-a-space-in-front-of-‘Folder’-string" class="headerlink" title="Add a space in front of ‘Folder’ string"></a>Add a space in front of ‘Folder’ string</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo sed -i <span class="string">''</span> <span class="string">'s/g\&gt;Folder/g\&gt; Folder/'</span> <span class="variable">$FILE</span> &gt; /dev/null</div></pre></td></tr></table></figure>
+<h2 id="Convert-InfoPlist-strings-back-to-binary"><a href="#Convert-InfoPlist-strings-back-to-binary" class="headerlink" title="Convert InfoPlist.strings back to binary"></a>Convert InfoPlist.strings back to binary</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo plutil -convert binary1 <span class="variable">$FILE</span></div></pre></td></tr></table></figure>
+<h2 id="Remove-all-DS-Store-files-to-reset-folder-specific-view-options"><a href="#Remove-all-DS-Store-files-to-reset-folder-specific-view-options" class="headerlink" title="Remove all .DS_Store files to reset folder specific view options"></a>Remove all .DS_Store files to reset folder specific view options</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo find / -name <span class="string">".DS_Store"</span> -depth -exec rm <span class="_">-f</span> &#123;&#125; \;</div></pre></td></tr></table></figure>
+<h2 id="Restart-cfprefsd-and-Finder"><a href="#Restart-cfprefsd-and-Finder" class="headerlink" title="Restart cfprefsd and Finder"></a>Restart cfprefsd and Finder</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">kill</span>All cfprefsd</div><div class="line"><span class="built_in">kill</span>All Finder</div></pre></td></tr></table></figure>
 
             
         </div>
@@ -259,9 +259,9 @@ Icon View: icnv
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small">TAGGÉ DANS</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/MacOS/">MacOS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Settings/">Settings</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/MacOS/">MacOS</a>
 
             </div>
         
@@ -270,17 +270,17 @@ Icon View: icnv
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/20/AngularJS-Promises/"  data-tooltip="AngularJS Promises">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/20/angularjs-promises/"  data-tooltip="AngularJS Promises">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/16/html5-multimedia/" data-tooltip="HTML5 Multimedia">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -339,17 +339,17 @@ Icon View: icnv
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/20/AngularJS-Promises/"  data-tooltip="AngularJS Promises">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/20/angularjs-promises/"  data-tooltip="AngularJS Promises">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/16/html5-multimedia/" data-tooltip="HTML5 Multimedia">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -393,17 +393,17 @@ Icon View: icnv
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2015/08/10/mac-finder-preferences/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+                <i class="fa fa-google-plus"></i><span class="">Partager sur Google Plus</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2015/08/10/mac-finder-preferences/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
             </a>
         </li>
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2015/08/10/mac-finder-preferences/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
             </a>
         </li>
     </ul>
@@ -433,7 +433,7 @@ Icon View: icnv
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         

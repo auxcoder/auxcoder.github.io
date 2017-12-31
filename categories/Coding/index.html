@@ -85,7 +85,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -121,7 +121,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -133,7 +133,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -145,7 +145,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -189,7 +189,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2017/03/20/AngularJS-Promises/">
+                        <a class="link-unstyled" href="/2017/03/20/angularjs-promises/">
                             AngularJS Promises
                         </a>
                     
@@ -197,11 +197,11 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" content="Mon Mar 20 2017 10:36:21 GMT-0400">
 	
-		    Mar 20, 2017
+		    20 Mar 2017
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -212,7 +212,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="AngularJS-use-the-q-library-qProvider-to-build-promises"><a href="#AngularJS-use-the-q-library-qProvider-to-build-promises" class="headerlink" title="AngularJS use the $q library, qProvider to build promises."></a>AngularJS use the <code>$q</code> library, <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">qProvider</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
+                    <h2 id="AngularJS-use-the-q-library-a-service-to-build-promises"><a href="#AngularJS-use-the-q-library-a-service-to-build-promises" class="headerlink" title="AngularJS use the $q library,a service to build promises."></a>AngularJS use the <code>$q</code> library,a <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">service</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
 <p>A promise is always in either one of three states:</p>
 <ul>
 <li><em>Pending</em> - the result hasn’t been computed yet</li>
@@ -245,20 +245,20 @@
 <p>We have a <code>finally(callback, notifyCallback)</code> method that allows you to observe either the fulfillment or rejection of a promise.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(response);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.catch(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(e);</div><div class="line">		&#125;</div><div class="line">	).finally(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'promise ends with success or error'</span>);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
 <h2 id="q-all"><a href="#q-all" class="headerlink" title="$q.all()"></a><code>$q.all()</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line">	<span class="keyword">var</span> houses = MyService.getHouses();</div><div class="line">	<span class="keyword">var</span> cars = MyService.getCars();</div><div class="line"></div><div class="line">	$q.all([houses, cars]).then(</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.resolve(response);</div><div class="line">		&#125;,</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.reject(response);</div><div class="line">		&#125;</div><div class="line">	);</div><div class="line">	<span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><em>Sources</em></p>
-<ul>
-<li><a href="https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/" target="_blank" rel="external">Promises in AngularJS. Part II. $q service</a></li>
-<li><a href="http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained" target="_blank" rel="external">Angular promise chaining explained</a></li>
-<li><a href="http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/" target="_blank" rel="external">AngularJS Promises - The Definitive Guide</a></li>
-</ul>
+<!---
+*References*
++ [Promises in AngularJS. Part II. $q service](https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/)
++ [Angular promise chaining explained](http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained)
++ [AngularJS Promises - The Definitive Guide](http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/)
+--->
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2017/03/20/AngularJS-Promises/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
+                            <a href="/2017/03/20/angularjs-promises/#post-footer" class="postShorten-excerpt_link link">
+                                Commenter et partager
                             </a>
                         </p>
                     
@@ -282,11 +282,11 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" content="Tue Jun 16 2015 11:57:21 GMT-0400">
 	
-		    Jun 16, 2015
+		    16 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -338,65 +338,7 @@
                     
                         <p>
                             <a href="/2015/06/16/html5-multimedia/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2015/06/10/devtool-tricks/">
-                            Devtool tricks
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
-	
-		    Jun 10, 2015
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/Coding/">Coding</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit, faff process.</p>
-<p>Sometimes I forget to set a breakpoint when my XHR requests come back so I can copy the response. But it’s to fix.</p>
-<p>Right click on the XHR request in the network panel, and select “Copy response”. Boom. I’ve now captured the JSON response and I’m good.</p>
-<p><img src="/images/devtools-copy-response.jpg" alt="devtools copy response"></p>
-<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon for me to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
-<p><strong>This is where <code>$_</code> is a live saver, which contains the result of the last command run in the console.</strong></p>
-<p>In the example below, I’ve forgotten to capture the result of the promise so I can manipulate (or in this case, <code>copy</code>) the result. This is simply fixed by running a new command with <code>$_.then(...)</code>.</p>
-<p><img src="/images/devtools-dollar-underscore.png" alt="devtools dollar underscore"></p>
-<h2 id="Copy-any-dead-logged-value"><a href="#Copy-any-dead-logged-value" class="headerlink" title="Copy any dead logged value"></a>Copy any <em>dead</em> logged value</h2><p>Sometimes I’ll <code>console.log</code> out a value or object that I want to inspect. Then realise that actually I want to copy it. Old me would go back to the source code, and log out a <code>JSON.stringify</code>, but not new me.</p>
-<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON for me:</p>
-<p><img src="/images/devtools-capture-for-copy.png" alt="devtools copy a global"></p>
-<p>What’s a trick, neat or otherwise, that you use on a regular basis?</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2015/06/10/devtool-tricks/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
+                                Commenter et partager
                             </a>
                         </p>
                     
@@ -420,11 +362,11 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
 	
-		    Jun 10, 2015
+		    10 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -438,8 +380,7 @@
                     <h3 id="Get-web-page-content"><a href="#Get-web-page-content" class="headerlink" title="Get web page content"></a>Get web page content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div></pre></td></tr></table></figure>
 <p>Some time the target site has you <em>banned access based on your browser’s signature</em> based in your <code>--user-agent</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div><div class="line">curl --header <span class="string">"X-MyHeader: 1"</span> www.bropages.org</div></pre></td></tr></table></figure>
-<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
 <h4 id="Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser"><a href="#Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser" class="headerlink" title="Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser"></a>Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser</h4><p>The basic syntax is as follows:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"UserAgentString"</span> http://url.com</div></pre></td></tr></table></figure>
 <p>One of the most common situations of different source HTML and CSS are for websites with stripped down mobile versions, you could retrieve iPhone-specific source code with:</p>
@@ -448,12 +389,9 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> http://microsoft.com</div></pre></td></tr></table></figure>
 <p>Save file</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> -O https://remysharp.com/2015/06/09/devtool-tricks-for-when-i-forget</div></pre></td></tr></table></figure>
-<h3 id="POST"><a href="#POST" class="headerlink" title="POST:"></a>POST:</h3><p>For posting data:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>For file upload:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>RESTful HTTP Post:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p><em>For posting data</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>For file upload</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>RESTful HTTP Post</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -461,7 +399,61 @@
                     
                         <p>
                             <a href="/2015/06/10/curl/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
+                                Commenter et partager
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/2015/06/10/devtool-tricks/">
+                            Devtool tricks
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
+	
+		    10 Jun 2015
+    	
+    </time>
+    
+        <span>dans </span>
+        
+    <a class="category-link" href="/categories/Coding/">Coding</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h1 id="Two-tricks-for-when-I-“forget”"><a href="#Two-tricks-for-when-I-“forget”" class="headerlink" title="Two tricks for when I “forget”."></a>Two tricks for when I “forget”.</h1><h2 id="Capturing-XHR-results"><a href="#Capturing-XHR-results" class="headerlink" title="Capturing XHR results"></a>Capturing XHR results</h2><p>One of my favourite commands in devtools is the <code>copy</code> function. It’ll copy DOM nodes, it’ll stringify objects and it saves that horrible long and tricky select, highlight, copy, edit process.</p>
+<p>Sometimes I forget to set a breakpoint when my XHR requests come back so I can copy the response. But it’s to fix.</p>
+<p>Right click on the XHR request in the network panel, and select “Copy response”. Boom. I’ve now captured the JSON response and I’m good.</p>
+<h2 id="Retrieving-results-from-the-ether"><a href="#Retrieving-results-from-the-ether" class="headerlink" title="Retrieving results from the ether"></a>Retrieving results from the ether</h2><p>It’s not uncommon to run a command in the console, then realise I forgot to capture the result so I could run it through a <code>map</code> or some such process.</p>
+<p><strong>This is where <code>$_</code> is a live saver, which contains the result of the last command run in the console.</strong></p>
+<p>In the example below, I’ve forgotten to capture the result of the promise so I can manipulate (or in this case, <code>copy</code>) the result. This is simply fixed by running a new command with <code>$_.then(...)</code>.</p>
+<h2 id="Copy-any-dead-logged-value"><a href="#Copy-any-dead-logged-value" class="headerlink" title="Copy any dead logged value"></a>Copy any <em>dead</em> logged value</h2><p>Sometimes I’ll <code>console.log</code> out a value or object that I want to inspect. Then realise that actually I want to copy it. Old me would go back to the source code, and log out a <code>JSON.stringify</code>, but not new me.</p>
+<p>It’s really easy, right click on the object in the console, and “Store as Global Variable” (usually stored to <code>temp1</code>). Now it’s easy to <code>copy(temp1)</code> and it’ll automatically be converted into a JSON.</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2015/06/10/devtool-tricks/#post-footer" class="postShorten-excerpt_link link">
+                                Commenter et partager
                             </a>
                         </p>
                     
@@ -485,11 +477,11 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
 	
-		    Jun 10, 2015
+		    10 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -1014,7 +1006,7 @@
                     
                         <p>
                             <a href="/2015/06/10/html5/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
+                                Commenter et partager
                             </a>
                         </p>
                     
@@ -1028,7 +1020,7 @@
     <ul class="pagination">
         
         
-        <li class="pagination-number">page 1 of 1</li>
+        <li class="pagination-number">page sur</li>
     </ul>
 </div>
 
@@ -1067,7 +1059,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         

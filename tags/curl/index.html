@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="AuxCoder">
-    <title>Tag: Curl - AuxCoder</title>
+    <title>Tag: curl - AuxCoder</title>
     <meta name="author" content="Auxcoder">
     
     
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="AuxCoder">
-<meta property="og:url" content="http://auxcoder.github.io/tags/Curl/index.html">
+<meta property="og:url" content="http://auxcoder.github.io/tags/curl/index.html">
 <meta property="og:site_name" content="AuxCoder">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AuxCoder">
@@ -85,7 +85,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -121,7 +121,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -133,7 +133,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -145,7 +145,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -197,11 +197,11 @@
                 <div class="postShorten-meta">
     <time itemprop="datePublished" content="Wed Jun 10 2015 10:58:48 GMT-0400">
 	
-		    Jun 10, 2015
+		    10 Jun 2015
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -215,8 +215,7 @@
                     <h3 id="Get-web-page-content"><a href="#Get-web-page-content" class="headerlink" title="Get web page content"></a>Get web page content</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div></pre></td></tr></table></figure>
 <p>Some time the target site has you <em>banned access based on your browser’s signature</em> based in your <code>--user-agent</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -O [filenameURL]</div><div class="line">curl --header <span class="string">"X-MyHeader: 1"</span> www.bropages.org</div></pre></td></tr></table></figure>
-<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET:"></a>GET:</h3><p>with JSON:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -i -H <span class="string">"Accept: application/json"</span> -H <span class="string">"Content-Type: application/json"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
 <h4 id="Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser"><a href="#Change-User-Agent-with-curl-to-Get-URL-Source-Code-as-Different-OS-amp-Browser" class="headerlink" title="Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser"></a>Change User Agent with curl to Get URL Source Code as Different OS &amp; Browser</h4><p>The basic syntax is as follows:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"UserAgentString"</span> http://url.com</div></pre></td></tr></table></figure>
 <p>One of the most common situations of different source HTML and CSS are for websites with stripped down mobile versions, you could retrieve iPhone-specific source code with:</p>
@@ -225,12 +224,9 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> http://microsoft.com</div></pre></td></tr></table></figure>
 <p>Save file</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -A <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"</span> -O https://remysharp.com/2015/06/09/devtool-tricks-for-when-i-forget</div></pre></td></tr></table></figure>
-<h3 id="POST"><a href="#POST" class="headerlink" title="POST:"></a>POST:</h3><p>For posting data:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>For file upload:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure>
-<p>RESTful HTTP Post:</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p><em>For posting data</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --data <span class="string">"param1=value1&amp;param2=value2"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>For file upload</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl --form <span class="string">"fileupload=@filename.txt"</span> http://hostname/resource</div></pre></td></tr></table></figure></p>
+<p><em>RESTful HTTP Post</em><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -X POST <span class="_">-d</span> @filename http://hostname/resource</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -238,7 +234,7 @@
                     
                         <p>
                             <a href="/2015/06/10/curl/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
+                                Commenter et partager
                             </a>
                         </p>
                     
@@ -252,7 +248,7 @@
     <ul class="pagination">
         
         
-        <li class="pagination-number">page 1 of 1</li>
+        <li class="pagination-number">page sur</li>
     </ul>
 </div>
 
@@ -290,7 +286,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         

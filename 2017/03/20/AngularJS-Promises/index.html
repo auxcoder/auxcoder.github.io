@@ -11,16 +11,16 @@
     
     
     
-    <meta name="description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
+    <meta name="description" content="AngularJS use the $q library,a service to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise objec">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="AngularJS Promises">
-<meta property="og:url" content="http://auxcoder.github.io/2017/03/20/AngularJS-Promises/index.html">
+<meta property="og:url" content="http://auxcoder.github.io/2017/03/20/angularjs-promises/index.html">
 <meta property="og:site_name" content="AuxCoder">
-<meta property="og:description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
-<meta property="og:updated_time" content="2017-04-05T20:04:40.000Z">
+<meta property="og:description" content="AngularJS use the $q library,a service to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise objec">
+<meta property="og:updated_time" content="2017-04-06T13:54:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS Promises">
-<meta name="twitter:description" content="AngularJS use the $q library, qProvider to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise obje">
+<meta name="twitter:description" content="AngularJS use the $q library,a service to build promises.12345// A deferred object can be created within an asynchronous functionvar deferred = $q.defer();// The function should return a promise objec">
     
     
         
@@ -89,7 +89,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                    <span class="sidebar-button-desc">Home</span>
+                    <span class="sidebar-button-desc">Accueil</span>
                 </a>
         </li>
         
@@ -125,7 +125,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                    <span class="sidebar-button-desc">Archives</span>
+                    <span class="sidebar-button-desc">Archive</span>
                 </a>
         </li>
         
@@ -137,7 +137,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
-                    <span class="sidebar-button-desc">Search</span>
+                    <span class="sidebar-button-desc">Rechercher</span>
                 </a>
         </li>
         
@@ -149,7 +149,7 @@
                     >
                 
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                    <span class="sidebar-button-desc">About</span>
+                    <span class="sidebar-button-desc">À propos</span>
                 </a>
         </li>
         
@@ -195,11 +195,11 @@
     <div class="post-meta">
     <time itemprop="datePublished" content="Mon Mar 20 2017 10:36:21 GMT-0400">
 	
-		    Mar 20, 2017
+		    20 Mar 2017
     	
     </time>
     
-        <span>in </span>
+        <span>dans </span>
         
     <a class="category-link" href="/categories/Coding/">Coding</a>
 
@@ -210,7 +210,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="AngularJS-use-the-q-library-qProvider-to-build-promises"><a href="#AngularJS-use-the-q-library-qProvider-to-build-promises" class="headerlink" title="AngularJS use the $q library, qProvider to build promises."></a>AngularJS use the <code>$q</code> library, <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">qProvider</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
+            <h2 id="AngularJS-use-the-q-library-a-service-to-build-promises"><a href="#AngularJS-use-the-q-library-a-service-to-build-promises" class="headerlink" title="AngularJS use the $q library,a service to build promises."></a>AngularJS use the <code>$q</code> library,a <a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank" rel="external">service</a> to build promises.</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A deferred object can be created within an asynchronous function</span></div><div class="line"><span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line"><span class="comment">// The function should return a promise object</span></div><div class="line"><span class="keyword">return</span> deferred.promise</div></pre></td></tr></table></figure>
 <p>A promise is always in either one of three states:</p>
 <ul>
 <li><em>Pending</em> - the result hasn’t been computed yet</li>
@@ -243,12 +243,12 @@
 <p>We have a <code>finally(callback, notifyCallback)</code> method that allows you to observe either the fulfillment or rejection of a promise.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">myService.callFirst()</div><div class="line">	.then(</div><div class="line">		<span class="comment">// on success</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(response);</div><div class="line">		&#125;</div><div class="line">	)</div><div class="line">	.catch(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(e);</div><div class="line">		&#125;</div><div class="line">	).finally(</div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'promise ends with success or error'</span>);</div><div class="line">		&#125;</div><div class="line">	);</div></pre></td></tr></table></figure>
 <h2 id="q-all"><a href="#q-all" class="headerlink" title="$q.all()"></a><code>$q.all()</code></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> deferred = $q.defer();</div><div class="line"></div><div class="line">	<span class="keyword">var</span> houses = MyService.getHouses();</div><div class="line">	<span class="keyword">var</span> cars = MyService.getCars();</div><div class="line"></div><div class="line">	$q.all([houses, cars]).then(</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.resolve(response);</div><div class="line">		&#125;,</div><div class="line">		<span class="comment">// success callback</span></div><div class="line">		<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">			deferred.reject(response);</div><div class="line">		&#125;</div><div class="line">	);</div><div class="line">	<span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><em>Sources</em></p>
-<ul>
-<li><a href="https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/" target="_blank" rel="external">Promises in AngularJS. Part II. $q service</a></li>
-<li><a href="http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained" target="_blank" rel="external">Angular promise chaining explained</a></li>
-<li><a href="http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/" target="_blank" rel="external">AngularJS Promises - The Definitive Guide</a></li>
-</ul>
+<!---
+*References*
++ [Promises in AngularJS. Part II. $q service](https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/)
++ [Angular promise chaining explained](http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained)
++ [AngularJS Promises - The Definitive Guide](http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/)
+--->
 
             
         </div>
@@ -256,7 +256,7 @@
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small">TAGGÉ DANS</span><br/>
                 
     <a class="tag tag--primary tag--small t-link" href="/tags/q/">$q</a> <a class="tag tag--primary tag--small t-link" href="/tags/AngularSJS/">AngularSJS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Promises/">Promises</a>
 
@@ -267,17 +267,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/05/hello-world/"  data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2015/08/10/mac-finder-preferences/" data-tooltip="Mac Finder preferences">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -290,17 +290,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -338,17 +338,17 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/04/05/hello-world/"  data-tooltip="Hello World">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PRÉCÉDENT</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/2015/08/10/mac-finder-preferences/" data-tooltip="Mac Finder preferences">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">SUIVANT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -361,17 +361,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -391,18 +391,18 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
+                <i class="fa fa-google-plus"></i><span class="">Partager sur Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
+                <i class="fa fa-facebook-official"></i><span>Partager sur Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/AngularJS-Promises/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://auxcoder.github.io/2017/03/20/angularjs-promises/">
+                <i class="fa fa-twitter"></i><span>Partager sur Twitter</span>
             </a>
         </li>
     </ul>
@@ -432,7 +432,7 @@
             <h5 id="about-card-job">
                 <i class="fa fa-briefcase"></i>
                 <br/>
-                <p>Front End Developer</p>
+                <p>author.job</p>
 
             </h5>
         
