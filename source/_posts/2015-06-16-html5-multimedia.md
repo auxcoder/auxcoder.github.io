@@ -5,12 +5,12 @@ date: 2015-06-16 11:57:21
 excerpt: "HTML5 multimedia elements and features."
 categories: Coding
 tags:
-- html5
-- accessibility
-- html5 multimedia
-- html5 video
-- html5 audio
-author: auxcoder
+- Html5
+- Accessibility
+- Html5 multimedia
+- Html5 video
+- Html5 audio
+author: Auxcoder
 ---
 
 +   [HTML5](#HTML5)

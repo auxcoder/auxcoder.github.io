@@ -3,27 +3,37 @@ title: AngularJS Promises
 date: 2017-03-20 10:36:21
 categories: Coding
 tags:
-- AngularSJS
+- AngularJS
 - Promises
 - $q
-author: auxcoder
+author: Auxcoder
 ---
 
-## AngularJS use the `$q` library,a [service](https://docs.angularjs.org/api/ng/service/$q) to build promises.
-
-```js
-// A deferred object can be created within an asynchronous function
-var deferred = $q.defer();
-
-// The function should return a promise object
-return deferred.promise
-```
+## AngularJS use the `$q` library, a [service](https://docs.angularjs.org/api/ng/service/$q) to build promises.
 
 A promise is always in either one of three states:
-
-+ *Pending* - the result hasn’t been computed yet
++ *Pending* - the result has not been computed yet
 + *Fulfilled* - the result was computed successfully
 + *Rejected* - a failure occurred during computation
+
+```js
+function myPromise(){
+	// A deferred object can be created within an asynchronous function
+	var deferred = $q.defer();
+	// do an action
+	// if action is satisfied
+	if (){
+		// resolved promise
+		deferred.resolve(reason); // Fulfilled
+	}
+	else {
+		// reject promise
+		deferred.rejected(reason); // Rejected
+	}
+	// The function should return a promise object
+	return deferred.promise // default Pending
+}
+```
 
 The first call `deferred.resolve(...)` puts the promise into the fulfilled state. As result a success callback will be invoked. The second call `deferred.reject(...)` puts the promise into the rejected state. As result an error callback will be invoked. It is also possible to invoke `deferred.notify(...)` to track chaining.
 
@@ -34,7 +44,7 @@ function myAsyncFunction(myParams){
 	var deferred = $q.defer();
 	deferred.notify({action: 'get-items' , message: 'Getting items ...'});
 
-	// update/notify should be called after returning ther deferred object
+	// update/notify should be called after returning they deferred object
 	$timeout(function(){
 		deferred.notify('getItems was called');
 	}, 0);
@@ -64,7 +74,7 @@ function myAsyncFunction(myParams){
 }
 ```
 
-We can use the promise chain `.then()` to wait untill promise resolve then do something with the data.
+We can use the promise chain `.then(successCallback, [errorCallback], [notifyCallback])` to wait until promise resolve then do something with the data. The `.finally(callback, notifyCallback)` allows you to observe either the fulfillment or rejection of a promise, but to do so without modifying the final value.
 
 ```js
 myAsyncFunction({param: 'some data'})
@@ -149,7 +159,7 @@ myService.callFirst()
 		// on success
 		function(firstResult){
 			// the returned object is available in the next .then()
-			return firstResult.lenght;
+			return firstResult.length;
 		}
 	)
 	.then(function(count){
@@ -165,11 +175,11 @@ myService.callFirst()
 		// on success
 		function(firstResult){
 			// the returned object is available in the next .then()
-			console.log(firstResult.lenght);
+			console.log(firstResult.length);
 		}
 	)
 	.then(function(count){
-		console.log(count); // undefined as nothing was explicity returned from the previous promise
+		console.log(count); // undefined as nothing was explicitly returned from the previous promise
 	})
 ```
 
@@ -190,14 +200,14 @@ myService.callFirst()
 		// on success
 		function(firstResult){
 			// the returned object is available in the next .then()
-			console.log(firstResult.lenght);
+			console.log(firstResult.length);
 		},
 		handleError,
 		handleUpdate
 	)
 	.then(
 		function(count){
-			console.log(count); // undefined as nothing was explicity returned from the previous promise
+			console.log(count); // undefined as nothing was explicitly returned from the previous promise
 		},
 		handleError,
 		handleUpdate
@@ -224,22 +234,22 @@ myService.callFirst()
 We have a `finally(callback, notifyCallback)` method that allows you to observe either the fulfillment or rejection of a promise.
 
 ```js
-myService.callFirst()
-	.then(
-		// on success
-		function(response){
-			console.log(response);
-		}
-	)
-	.catch(
-		function(e){
-			console.log(e);
-		}
-	).finally(
-		function(){
-			console.log('promise ends with success or error');
-		}
-	);
+myService.callFirst().then(
+	// on success
+	function(response){
+		console.log(response);
+	}
+)
+.catch(
+	// on error
+	function(e){
+		console.log(e);
+	}
+).finally(
+	function(){
+		console.log('promise ends with success or error');
+	}
+);
 ```
 
 ## `$q.all()`
@@ -265,9 +275,81 @@ function myAsyncFunction(){
 }
 ```
 
+## `$q.reject(reason)`
+Some times we need to reject a promise chain base on some data processing or specific validation.
+Let's assume that we have the functions `callFirst` and `callSecond` that returns a promise.
+
+```js
+callFirst({
+	attr_a: 'a',
+	attr_b: 'b'
+}).then(
+	// on success
+	handle_callFirst
+).then(
+	handle_callSecond
+)
+.catch(
+	// on error
+	handle_rejected
+).finally(
+	function(){
+		console.log('promise ends with success or error');
+	}
+);
+
+function handle_callFirst (response){
+	var _brand = response[0];
+	return callSecond({attr_c: _brand.name});
+}
+
+function handle_callSecond(){
+	var _myResultsFromSecond = response;
+}
+
+function handle_rejected (e){
+	console.log(e);
+}
+```
+
+As you can see in the `handle_callFirst` we return a new promise to chain it. That function call needs a value from the previous response. Suppose that we need to filter out the response to use the brand that has products on it `_brand.has_products === true`, in this case if any brand in the collection has *has_products* equal true then second call is going to fail as `_brand` will be `null`;
+In this type of case we can reject the promise right there to throw the rejection as the second call needs that data.
+
+```js
+function handle_callFirst (response){
+	var _brand = response.filter(function(x){
+		return x.has_products === true;
+	});
+	if (_brand.length === 0) return $q.reject(reason);
+	return callSecond({attr_c: _brand.name});
+}
+```
+
+
+### Use examples
+Reads a local file and returns it’s content
+
+```js
+function readFile(fileBlob) {
+    var deferred = $q.defer();
+    var reader = new FileReader();
+    reader.onload = function () { deferred.resolve(reader.result); };
+    reader.onerror = function () { deferred.reject(); };
+
+	try {
+        reader.readAsDataURL(fileBlob);
+    } catch (e) {
+        deferred.reject(e);
+    }
+
+    return deferred.promise;
+}
+```
+
 <!---
 *References*
 + [Promises in AngularJS. Part II. $q service](https://www.webcodegeeks.com/javascript/angular-js/promises-angularjs-part-ii-q-service/)
 + [Angular promise chaining explained](http://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained)
 + [AngularJS Promises - The Definitive Guide](http://www.dwmkerr.com/promises-in-angularjs-the-definitive-guide/)
++ [JavaScript Promises and AngularJS $q Service](http://www.webdeveasy.com/javascript-promises-and-angularjs-q-service/)
 --->

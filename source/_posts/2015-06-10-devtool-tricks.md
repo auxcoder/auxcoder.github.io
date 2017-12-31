@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Devtool tricks
-author: auxcoder
+author: Auxcoder
 categories: Coding
 date: 2015-06-10 10:58:48
 tags:
-- Devtool
+- DevTools
 comments: false
 ---
 

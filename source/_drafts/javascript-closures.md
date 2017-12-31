@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: false
 title: "javaScript Closures"
 comments: false
 categories: Coding

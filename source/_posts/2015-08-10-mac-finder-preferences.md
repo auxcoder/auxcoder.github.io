@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mac Finder preferences
-author: auxcoder
+author: Auxcoder
 categories: Misc
 date: 2015-08-10 10:58:48
 tags:

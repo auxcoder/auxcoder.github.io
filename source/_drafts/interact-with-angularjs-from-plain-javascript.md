@@ -1,13 +1,13 @@
 ---
-layout: post
+layout: false
 title: Interact with AngularJS from plain JavaScript
 comments: false
 category: Coding
 tags:
-- javascript
-- angularjs
+- Javascript
+- AngularJS
 - DOM
-author: auxcoder
+author: Auxcoder
 ---
 
 **Selecting by DOM element**
@@ -65,7 +65,7 @@ scope.$apply(function() {
 
 ```
 
-### Accesing to a controller function from outside of angular
+### Accessing to a controller function from outside of angular
 
 **Access to exiting controller function**
 

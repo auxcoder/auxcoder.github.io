@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: false
 title: "Github user pages"
 comments: false
 categories: Coding
