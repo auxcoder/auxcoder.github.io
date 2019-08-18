@@ -39,7 +39,7 @@ archive_generator:
 # Writing
 # File name of new posts
 new_post_name: :year-:month-:day-:title.md
-default_layout: post
+default_layout: _draft
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
