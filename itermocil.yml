@@ -1,0 +1,17 @@
+pre: code .
+windows:
+  - name: Hexo AUCCoder
+    root: ~/Sites/hexo_auxcoder_io/
+    layout: main-vertical
+    panes:
+      - commands:
+          - l
+        focus: true
+        name: "list folder"
+      - commands:
+          - git pull
+          - git status
+        name: "git"
+      - commands:
+          - hexo server --draft
+        name: "dev server"
