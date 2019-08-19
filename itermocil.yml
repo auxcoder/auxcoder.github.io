@@ -5,9 +5,12 @@ windows:
     layout: main-vertical
     panes:
       - commands:
+          - cd themes/anatole
           - l
+          - git pull
+          - git status
         focus: true
-        name: "list folder"
+        name: "theme folder repo"
       - commands:
           - git pull
           - git status

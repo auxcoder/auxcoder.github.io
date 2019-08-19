@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "styles": "node-sass -w source/scss/ -o source/css/"
+    "autoprefixer": "postcss source/css/*.css --use autoprefixer cssnano -d source/css",
+    "styles": "node-sass -w source/scss/ -o source/css/ --source-map source/css && npm run autoprefixer",
+    "postStyles": "npm run autoprefixer"
   },
   "repository": {
     "type": "git",
@@ -13,15 +15,18 @@
   },
   "keywords": [
     "hexo",
-    "theme",
-    "Anatole"
+    "theme"
   ],
-  "author": "Ben Wong",
+  "author": "AUXCoder",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Ben02/hexo-theme-Anatole/issues"
   },
   "homepage": "https://github.com/Ben02/hexo-theme-Anatole#readme",
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.3"
   }
 }
